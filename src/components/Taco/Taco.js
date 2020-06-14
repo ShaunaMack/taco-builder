@@ -4,12 +4,15 @@ import classes from './Taco.module.css';
 import TacoIngredient from './TacoIngredient/TacoIngredient'
 
 const taco = (props) => {
+    const transformedIngredients = Object.keys(props.ingredients)
+    .map( igKey => {
+        return [...Array(props.ingredients[igKey])].map( (_, i) => {
+            return <TacoIngredient key={igKey + i} type={igKey} />
+        } )
+    })
     return (
         <div className={classes.Taco}>
-            <TacoIngredient type="cheese" />
-            <TacoIngredient type="salsa" />
-            <TacoIngredient type="meat" />
-            <TacoIngredient type="salad" />
+            {transformedIngredients}
             <TacoIngredient type="bread-bottom" />
         </div>
     );

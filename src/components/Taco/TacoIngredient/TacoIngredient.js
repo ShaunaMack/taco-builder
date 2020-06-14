@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './TacoIngredient.module.css'
 
@@ -26,6 +27,10 @@ const tacoIngredient = (props) => {
 
     }
     return ingredient;
+};
+
+tacoIngredient.propTypes = {
+    type: PropTypes.string.isRequired,
 };
 
 export default tacoIngredient;

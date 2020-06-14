@@ -19,8 +19,8 @@ const tacoIngredient = (props) => {
         case ('salad'):
             ingredient = <div className={classes.Salad}> </div>;
             break;
-        case ('bacon'):
-            ingredient = <div className={classes.Bacon}> </div>;
+        case ('salsa'):
+            ingredient = <div className={classes.Salsa}> </div>;
             break;
         default:
             ingredient = null;

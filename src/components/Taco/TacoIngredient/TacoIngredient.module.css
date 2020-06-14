@@ -1,9 +1,9 @@
 .BreadBottom {
-    height: 13%;
+    height: 30%;
     width: 80%;
-    background: linear-gradient(#F08E4A, #e27b36);
-    border-radius: 0 0 30px 30px;
-    box-shadow: inset -15px 0 #c15711;
+    background: linear-gradient(rgb(240, 174, 74), rgb(255, 166, 0));
+    border-radius: 0 0 100px 100px;
+    box-shadow: inset -15px 0 #f3690c;
     margin: 2% auto;
 }
 
@@ -90,11 +90,19 @@
 }
 
 .Cheese {
-    width: 90%;
+    width: 80%;
     height: 4.5%;
     margin: 2% auto;
     background: linear-gradient(#f4d004, #d6bb22);
     border-radius: 20px;
+}
+
+.Salsa {
+  width: 80%;
+  height: 4.5%;
+  margin: 2% auto;
+  background: linear-gradient(#f43404, #d65b22);
+  border-radius: 20px;
 }
 
 .Salad {

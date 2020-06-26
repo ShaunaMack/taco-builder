@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Aux from '../../hoc/Aux'
 import Taco from '../../components/Taco/Taco'
+import BuildControls from '../../components/Taco/BuildControls/BuildControls';
 
 class TacoBuilder extends Component {
     state = {
@@ -16,7 +17,7 @@ class TacoBuilder extends Component {
         return (
             <Aux>
                 <Taco ingredients={this.state.ingredients}/>
-                <div>Build Controls</div>
+                <BuildControls />
             </Aux>
 
         );

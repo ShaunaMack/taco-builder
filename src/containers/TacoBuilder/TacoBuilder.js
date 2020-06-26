@@ -19,6 +19,18 @@ class TacoBuilder extends Component {
             salad: 0,
         },
         totalPrice:4,
+        purchasable: false,
+    }
+
+    updatePurchaseState (ingredients) {
+        const sum = Object.values(ingredients).reduce( (sum, el) => {
+            return sum + el;
+        }, 0);
+        console.log("sum: " + sum)
+        this.setState({purchasable: sum > 0})
+            // .map(igKey => {
+            //     return ingredients[igKey];
+            // })
     }
 
     addIngredientHandler = (type) => {
@@ -32,6 +44,7 @@ class TacoBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+        this.updatePurchaseState(updatedIngredients)
     }
 
     removeIngredientHandler = (type) => {
@@ -48,6 +61,7 @@ class TacoBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+        this.updatePurchaseState(updatedIngredients)
     }
     render() {
         const disabledInfo = {
@@ -61,6 +75,7 @@ class TacoBuilder extends Component {
                 <Taco ingredients={this.state.ingredients}/>
                 <BuildControls 
                     price={this.state.totalPrice}
+                    purchasable={this.state.purchasable}
                     ingredientAdded={this.addIngredientHandler} 
                     ingredientRemoved={this.removeIngredientHandler}
                     disabled={disabledInfo} />

@@ -60,6 +60,7 @@ class TacoBuilder extends Component {
             <Aux>
                 <Taco ingredients={this.state.ingredients}/>
                 <BuildControls 
+                    price={this.state.totalPrice}
                     ingredientAdded={this.addIngredientHandler} 
                     ingredientRemoved={this.removeIngredientHandler}
                     disabled={disabledInfo} />

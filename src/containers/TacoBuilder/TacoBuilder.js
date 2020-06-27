@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Aux from '../../hoc/Aux'
 import Taco from '../../components/Taco/Taco'
 import BuildControls from '../../components/Taco/BuildControls/BuildControls';
+import Modal from '../../components/UI/Modal/Modal'
+import OrderSummary from '../../components/Taco/OrderSummary/OrderSummary'
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -72,6 +74,9 @@ class TacoBuilder extends Component {
         }
         return (
             <Aux>
+                <Modal>
+                    <OrderSummary ingredients={this.state.ingredients}/>
+                </Modal>
                 <Taco ingredients={this.state.ingredients}/>
                 <BuildControls 
                     price={this.state.totalPrice}

@@ -2,9 +2,10 @@
     height: 30%;
     width: 80%;
     background: linear-gradient(rgb(240, 174, 74), rgb(255, 166, 0));
-    border-radius: 0 0 100px 100px;
+    border-radius:  100px 100px 0 0;
     box-shadow: inset -15px 0 #f3690c;
     margin: 0 auto 2% auto;
+    z-index: 5;
 
 }
 
@@ -83,40 +84,45 @@
   
 
 .Meat {
-    width: 80%;
+    width: 70%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
     margin: 0 auto;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    border-radius:  100px 100px 0 0;
 }
 
 .Cheese {
-    width: 80%;
+    width: 70%;
     height: 4.5%;
     margin: 0 auto;
     background: linear-gradient(#f4d004, #d6bb22);
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    border-radius:  100px 100px 0 0;
 }
 
 .Salsa {
-  width: 80%;
+  width: 70%;
   height: 4.5%;
   margin: 0 auto;
   background: linear-gradient(#f43404, #d65b22);
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-radius:  100px 100px 0 0;
 }
 
 .Salad {
-    width: 85%;
+    width: 75%;
     height: 7%;
     margin: 0 auto;
     background: linear-gradient(#228c1d, #91ce50);
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    border-radius:  100px 100px 0 0;
 }
 
 .Bacon {
     width: 80%;
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
-    margin: 2% auto;
+    /* margin: 2% auto; */
+    border-radius:  100px 100px 0 0;
 }

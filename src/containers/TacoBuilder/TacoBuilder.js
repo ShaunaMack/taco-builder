@@ -22,6 +22,7 @@ class TacoBuilder extends Component {
         },
         totalPrice:4,
         purchasable: false,
+        purchasing: false,
     }
 
     updatePurchaseState (ingredients) {
@@ -65,6 +66,19 @@ class TacoBuilder extends Component {
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
         this.updatePurchaseState(updatedIngredients)
     }
+
+    purchaseHandler = () => {
+        this.setState({purchasing: true})
+    }
+
+    purchaseCancelHandler = () => {
+        this.setState({purchasing: false})
+    }
+
+    purchaseContinueHandler = () => {
+        alert('You continue!')
+    }
+
     render() {
         const disabledInfo = {
             ...this.state.ingredients
@@ -74,8 +88,12 @@ class TacoBuilder extends Component {
         }
         return (
             <Aux>
-                <Modal>
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+                    <OrderSummary 
+                        ingredients={this.state.ingredients}
+                        price={this.state.totalPrice}
+                        purchasedCancelled={this.purchaseCancelHandler}
+                        purchasedContinued={this.purchaseContinueHandler}/>
                 </Modal>
                 <Taco ingredients={this.state.ingredients}/>
                 <BuildControls 
@@ -83,7 +101,8 @@ class TacoBuilder extends Component {
                     purchasable={this.state.purchasable}
                     ingredientAdded={this.addIngredientHandler} 
                     ingredientRemoved={this.removeIngredientHandler}
-                    disabled={disabledInfo} />
+                    disabled={disabledInfo}
+                    ordered={this.purchaseHandler} />
             </Aux>
 
         );
